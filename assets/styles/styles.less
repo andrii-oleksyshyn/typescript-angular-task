@@ -1,0 +1,322 @@
+html {
+  background-color: white;
+}
+@import url(//fonts.googleapis.com/css?family=Montserrat:400,700);
+
+@error-color: #FF0000;
+@error-bg: #FFEEEE;
+
+body {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+.field-validation-error
+{
+  color: @error-color;
+}
+
+.field-validation-valid
+{
+  display: none;
+}
+
+.input-validation-error
+{
+  border: 1px solid @error-color !important;
+  background-color: @error-bg;
+}
+
+.footer {
+  padding-top: 60px;
+}
+
+.bold
+{
+  font-weight: bold;
+}
+
+.hide {
+  display: none;
+}
+
+.page-header {
+  margin: 10px 0 15px;
+  border: none;
+  @media (max-width: 980px) {
+    margin: 0;
+  }
+}
+
+.navbar {margin-bottom: 0;}
+
+.btn-action {
+  color: #ffffff;
+  background-color: #0F1221;
+  border-color: #0F1221;
+  border-radius: 0;
+  margin: 10px 0;
+  padding: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.btn-action:hover,
+.btn-action:focus,
+.btn-action:active,
+.btn-action.active,
+.open .dropdown-toggle.btn-action {
+  color: #000;
+  background-color: #eee;
+  border-color: #0F1221;
+}
+
+.btn-action:active,
+.btn-action.active,
+.open .dropdown-toggle.btn-action {
+  background-image: none;
+}
+
+.btn-action.disabled,
+.btn-action[disabled],
+fieldset[disabled] .btn-action,
+.btn-action.disabled:hover,
+.btn-action[disabled]:hover,
+fieldset[disabled] .btn-action:hover,
+.btn-action.disabled:focus,
+.btn-action[disabled]:focus,
+fieldset[disabled] .btn-action:focus,
+.btn-action.disabled:active,
+.btn-action[disabled]:active,
+fieldset[disabled] .btn-action:active,
+.btn-action.disabled.active,
+.btn-action[disabled].active,
+fieldset[disabled] .btn-action.active {
+  background-color: #0F1221;
+  border-color: #0F1221;
+}
+
+.btn-action .badge {
+  color: #0F1221;
+  background-color: #ffffff;
+}
+
+.kaptl-logo {
+  width: 48px;
+}
+
+.navbar-custom {
+  background-color: #000000;
+  border-color: #000000;
+  border-radius: 0;
+}
+.navbar-custom .navbar-brand {
+  color: #ffffff;
+}
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .navbar-brand:focus {
+  color: #e6e6e6;
+  background-color: transparent;
+}
+.navbar-custom .navbar-text {
+  color: #ffffff;
+}
+.navbar-custom .navbar-nav > li > a {
+  color: #ffffff;
+}
+.navbar-custom .navbar-nav > li > a:hover,
+.navbar-custom .navbar-nav > li > a:focus {
+  color: #c9c9c9;
+  background-color: transparent;
+}
+.navbar-custom .navbar-nav > .active > a,
+.navbar-custom .navbar-nav > .active > a:hover,
+.navbar-custom .navbar-nav > .active > a:focus {
+  color: #c9c9c9;
+  background-color: #000000;
+}
+.navbar-custom .navbar-nav > .disabled > a,
+.navbar-custom .navbar-nav > .disabled > a:hover,
+.navbar-custom .navbar-nav > .disabled > a:focus {
+  color: #cccccc;
+  background-color: transparent;
+}
+.navbar-custom .navbar-toggle {
+  border-color: #dddddd;
+}
+.navbar-custom .navbar-toggle:hover,
+.navbar-custom .navbar-toggle:focus {
+  background-color: #dddddd;
+}
+.navbar-custom .navbar-toggle .icon-bar {
+  background-color: #cccccc;
+}
+.navbar-custom .navbar-collapse,
+.navbar-custom .navbar-form {
+  border-color: #000000;
+}
+.navbar-custom .navbar-nav > .dropdown > a:hover .caret,
+.navbar-custom .navbar-nav > .dropdown > a:focus .caret {
+  border-top-color: #c9c9c9;
+  border-bottom-color: #c9c9c9;
+}
+.navbar-custom .navbar-nav > .open > a,
+.navbar-custom .navbar-nav > .open > a:hover,
+.navbar-custom .navbar-nav > .open > a:focus {
+  background-color: #000000;
+  color: #c9c9c9;
+}
+.navbar-custom .navbar-nav > .open > a .caret,
+.navbar-custom .navbar-nav > .open > a:hover .caret,
+.navbar-custom .navbar-nav > .open > a:focus .caret {
+  border-top-color: #c9c9c9;
+  border-bottom-color: #c9c9c9;
+}
+.navbar-custom .navbar-nav > .dropdown > a .caret {
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+@media (max-width: 767px) {
+  .navbar-custom .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffffff;
+  }
+  .navbar-custom .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-custom .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #c9c9c9;
+    background-color: transparent;
+  }
+  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #c9c9c9;
+    background-color: #000000;
+  }
+  .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a,
+  .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #cccccc;
+    background-color: transparent;
+  }
+}
+.navbar-custom .navbar-link {
+  color: #ffffff;
+}
+.navbar-custom .navbar-link:hover {
+  color: #c9c9c9;
+}
+
+.navbar-custom .navbar-toggle {
+  border-color: #ffffff;
+}
+
+.navbar-custom .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+
+.checkbox input[type="checkbox"] {
+  margin-left: 0;
+}
+
+.btn-negative-action {
+  color: #000000;
+  background-color: #BAE423;
+  border-color: #BAE423;
+  border-radius: 0;
+}
+
+.btn-negative-action:hover,
+.btn-negative-action:focus,
+.btn-negative-action:active,
+.btn-negative-action.active,
+.open .dropdown-toggle.btn-negative-action {
+  color: #000000;
+  background-color: #c5f128;
+  border-color: #c5f127;
+}
+
+.btn-negative-action:active,
+.btn-negative-action.active,
+.open .dropdown-toggle.btn-negative-action {
+  background-image: none;
+}
+
+.btn-negative-action.disabled,
+.btn-negative-action[disabled],
+fieldset[disabled] .btn-negative-action,
+.btn-negative-action.disabled:hover,
+.btn-negative-action[disabled]:hover,
+fieldset[disabled] .btn-negative-action:hover,
+.btn-negative-action.disabled:focus,
+.btn-negative-action[disabled]:focus,
+fieldset[disabled] .btn-negative-action:focus,
+.btn-negative-action.disabled:active,
+.btn-negative-action[disabled]:active,
+fieldset[disabled] .btn-negative-action:active,
+.btn-negative-action.disabled.active,
+.btn-negative-action[disabled].active,
+fieldset[disabled] .btn-negative-action.active {
+  background-color: #BAE423;
+  border-color: #BAE423;
+}
+
+.btn-negative-action .badge {
+  color: #0F1221;
+  background-color: #FFFFFF;
+}
+
+.btn-back {
+  margin: 14px 0;
+}
+
+.block-ui-wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 20%;
+  i {
+    color: #fff;
+    opacity: 1;
+    font-size: 64px;
+  }
+}
+
+@media screen and (max-width: 812px) {
+
+  .ng-table-responsive td:before {
+    position: absolute;
+    padding: 8px;
+    left: 0;
+    top: 0;
+    width: 50%;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .ng-table-responsive td:before {
+    content: attr(data-title-text) ":";
+  }
+
+  .ng-table tbody tr td {
+    padding-left: 50%;
+  }
+
+  .ng-table thead {
+    display: none;
+  }
+}
+
+@media (max-width: 940px) {
+  .ng-table ~ .btn-action {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: 0 0 0 -15px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 940px) {
+  .ng-table ~ .btn-action {
+    margin-left: -12%;
+    width: 107%;
+  }
+}

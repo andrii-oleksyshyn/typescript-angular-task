@@ -1,0 +1,20 @@
+
+<h3>User List</h3>
+
+
+<validation-summary></validation-summary>
+
+<table class="table ng-table-responsive" ng-table="vm.tableParams">
+    <tr ng-repeat="row in $data">
+        <td title="'Name'" sortable="'name'">{{row.name}}</td>
+        <td title="'Email'" sortable="'email'">{{row.email}}</td>
+        <td title="'User Type'" sortable="'userType'">{{row.userType}}</td>
+        <td title="'Date Joined'" sortable="'dateJoined'">{{row.dateJoined}}</td>
+        <td data-title="'Actions'">
+            <a ng-click="vm.editItem(row.id)">Edit</a> |
+            <a ng-click="vm.deleteItem(row.id)">Delete</a>
+        </td>
+    </tr>
+</table>
+
+<a class="btn btn-action" href="{{vm.createLink}}">Add User</a>

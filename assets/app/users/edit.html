@@ -1,0 +1,20 @@
+
+
+<h3 ng-if="!vm.item.id">Add User</h3>
+<h3 ng-if="vm.item.id">User Edit</h3>
+
+
+<form ng-submit="vm.updateItem()" name="userForm">
+
+    <validation-summary></validation-summary>
+    <field type="text" name="name" value="vm.item.name" placeholder="Name" title="Name"></field>
+    <field type="text" name="email" value="vm.item.email" placeholder="Email" title="Email"></field>
+    <field type="dropdown" name="userType" value="vm.item.userType" items="vm.userTypes" title="User Type"></field>
+    <field type="date" name="dateJoined" value="vm.item.dateJoined" placeholder="Date Joined" title="Date Joined"></field>
+    <field type="dropdown" name="homeAddressId" value="vm.item.homeAddressId" items="vm.homeAddresses" title="Home Address"></field>
+
+    <input type="submit" class="btn btn-action" value="Save" ng-disabled="userForm.$invalid" />
+
+    <a class="btn btn-negative-action btn-back pull-right" href="/users">Back to list</a>
+
+</form>

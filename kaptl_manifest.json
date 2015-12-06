@@ -1,0 +1,13 @@
+﻿{
+  "appName": "6170c1503d4d432c89b397d8ed53ddbf",
+  "rules": null,
+  "stack": {
+    "backend": [
+      "sails"
+    ],
+    "frontend": [
+      "angular"
+    ],
+    "id": 1667
+  }
+}

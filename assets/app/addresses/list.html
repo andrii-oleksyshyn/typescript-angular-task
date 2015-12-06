@@ -1,0 +1,20 @@
+
+<h3>Address List</h3>
+
+
+<validation-summary></validation-summary>
+
+<table class="table ng-table-responsive" ng-table="vm.tableParams">
+    <tr ng-repeat="row in $data">
+        <td title="'Street Address'" sortable="'streetAddress'">{{row.streetAddress}}</td>
+        <td title="'City'" sortable="'city'">{{row.city}}</td>
+        <td title="'State'" sortable="'state'">{{row.state}}</td>
+        <td title="'Zip'" sortable="'zip'">{{row.zip}}</td>
+        <td data-title="'Actions'">
+            <a ng-click="vm.editItem(row.id)">Edit</a> |
+            <a ng-click="vm.deleteItem(row.id)">Delete</a>
+        </td>
+    </tr>
+</table>
+
+<a class="btn btn-action" href="{{vm.createLink}}">Add Address</a>

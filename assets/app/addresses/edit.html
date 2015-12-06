@@ -1,0 +1,19 @@
+
+
+<h3 ng-if="!vm.item.id">Add Address</h3>
+<h3 ng-if="vm.item.id">Address Edit</h3>
+
+
+<form ng-submit="vm.updateItem()" name="addressForm">
+
+    <validation-summary></validation-summary>
+    <field type="text" name="streetAddress" value="vm.item.streetAddress" placeholder="Street Address" title="Street Address"></field>
+    <field type="text" name="city" value="vm.item.city" placeholder="City" title="City"></field>
+    <field type="text" name="state" value="vm.item.state" placeholder="State" title="State"></field>
+    <field type="text" name="zip" value="vm.item.zip" placeholder="Zip" title="Zip"></field>
+
+    <input type="submit" class="btn btn-action" value="Save" ng-disabled="addressForm.$invalid" />
+
+    <a class="btn btn-negative-action btn-back pull-right" href="/addresses">Back to list</a>
+
+</form>

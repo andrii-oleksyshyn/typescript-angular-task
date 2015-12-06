@@ -1,0 +1,20 @@
+
+<h3>Order List</h3>
+
+
+<validation-summary></validation-summary>
+
+<table class="table ng-table-responsive" ng-table="vm.tableParams">
+    <tr ng-repeat="row in $data">
+        <td title="'Date'" sortable="'date'">{{row.date}}</td>
+        <td title="'Pickup Time'" sortable="'pickupTime'">{{row.pickupTime}}</td>
+        <td title="'Order Status'" sortable="'orderStatus'">{{row.orderStatus}}</td>
+        <td title="'Cost'" sortable="'cost'">{{row.cost}}</td>
+        <td data-title="'Actions'">
+            <a ng-click="vm.editItem(row.id)">Edit</a> |
+            <a ng-click="vm.deleteItem(row.id)">Delete</a>
+        </td>
+    </tr>
+</table>
+
+<a class="btn btn-action" href="{{vm.createLink}}">Add Order</a>

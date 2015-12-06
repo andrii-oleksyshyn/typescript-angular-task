@@ -1,0 +1,23 @@
+
+
+<h3 ng-if="!vm.item.id">Add Order</h3>
+<h3 ng-if="vm.item.id">Order Edit</h3>
+
+
+<form ng-submit="vm.updateItem()" name="orderForm">
+
+    <validation-summary></validation-summary>
+    <field type="date" name="date" value="vm.item.date" placeholder="Date" title="Date"></field>
+    <field type="dropdown" name="clientId" value="vm.item.clientId" items="vm.clients" title="Client"></field>
+    <field type="dropdown" name="driverId" value="vm.item.driverId" items="vm.drivers" title="Driver"></field>
+    <field type="dropdown" name="sourceAddressId" value="vm.item.sourceAddressId" items="vm.sourceAddresses" title="Source Address"></field>
+    <field type="dropdown" name="destinationAddressId" value="vm.item.destinationAddressId" items="vm.destinationAddresses" title="Destination Address"></field>
+    <field type="text" name="pickupTime" value="vm.item.pickupTime" placeholder="Pickup Time" title="Pickup Time"></field>
+    <field type="dropdown" name="orderStatus" value="vm.item.orderStatus" items="vm.orderStatus" title="Order Status"></field>
+    <field type="text" name="cost" value="vm.item.cost" placeholder="Cost" title="Cost"></field>
+
+    <input type="submit" class="btn btn-action" value="Save" ng-disabled="orderForm.$invalid" />
+
+    <a class="btn btn-negative-action btn-back pull-right" href="/orders">Back to list</a>
+
+</form>
