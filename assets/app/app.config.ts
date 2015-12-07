@@ -1,3 +1,7 @@
+interface IMyRootScope extends ng.IRootScopeService {
+    errorList: any[];
+}
+
 ((): void => {
     "use strict";
 
@@ -11,7 +15,7 @@
     function config ($locationProvider: ng.ILocationProvider, 
         $httpProvider: ng.IHttpProvider, 
         $routeProvider: ng.route.IRouteProvider,
-        blockUiConfig): void {
+        blockUiConfig: any): void {
 
         $locationProvider.html5Mode(true);
 
@@ -25,13 +29,9 @@
     }
 
     run.$inject = ["$rootScope"];
-    
-    interface IMyRootScope extends ng.IRootScopeService {
-        errorList: any[];
-    }
 
     function run ($rootScope: IMyRootScope): void {
-        $rootScope.$on("$locationChangeSuccess", function (): void {
+        $rootScope.$on("$locationChangeSuccess", (): void => {
             $rootScope.errorList = [];
         })
     }
