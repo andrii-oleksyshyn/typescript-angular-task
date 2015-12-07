@@ -1,6 +1,5 @@
 (function () {
     "use strict";
-
     angular.module("app", [
         "ngRoute",
         "ngTable",
@@ -11,10 +10,8 @@
         "app.apiService",
         "field",
         "validationSummary",
-/*$(ContentStart)*/
         "app.address",
         "app.user",
         "app.order",
-/*$(ContentEnd)*/
     ]);
-}());
+})();
