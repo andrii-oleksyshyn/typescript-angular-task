@@ -1,5 +1,6 @@
-(function () {
+((): void => {
     "use strict";
+
     angular.module("app.address", [
         "ngTable",
         "app.apiService",
