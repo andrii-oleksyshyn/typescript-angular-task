@@ -2,7 +2,7 @@
     "use strict";
 
     angular
-        .module("app.address")
+        .module("app.user")
         .config(config);
 
     config.$inject = ["$routeProvider", "$locationProvider"];
@@ -11,8 +11,8 @@
         $locationProvider: ng.ILocationProvider): void {
 
         $routeProvider
-            .when("/addresses", { templateUrl: "app/addresses/list.html", controller: "AddressListController", controllerAs: "vm" })
-            .when("/addresses/edit/:id?", { templateUrl: "app/addresses/edit.html", controller: "AddressEditController", controllerAs: "vm" })
+            .when("/users", { templateUrl: "app/users/list.html", controller: "UserListController", controllerAs: "vm" })
+            .when("/users/edit/:id?", { templateUrl: "app/users/edit.html", controller: "UserEditController", controllerAs: "vm" })
             .otherwise({ redirectTo: "/" });
     }
 })();

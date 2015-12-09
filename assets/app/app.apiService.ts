@@ -1,6 +1,6 @@
 module app.apiService {
     "use strict";
-    
+
     export interface IApiService {
         getAddresses: Function;
         getAddressById: Function;
@@ -18,7 +18,7 @@ module app.apiService {
         updateOrder: Function;
         deleteOrder: Function;
     }
-    
+
     export class ApiService implements IApiService {
         constructor(private $http: ng.IHttpService) {}
 
@@ -97,13 +97,13 @@ module app.apiService {
             return this.$http.delete("/api/Orders/" + orderId);
         }
     }
-    
+
     function apiService($http: ng.IHttpService): IApiService {
         return new ApiService($http);
     }
-    
+
     apiService.$inject = ["$http"];
-    
+
     angular
         .module("app.apiService", [])
         .factory("apiService", apiService);

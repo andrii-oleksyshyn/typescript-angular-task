@@ -1,51 +1,55 @@
-module app.address {
-    "use strict";
-
-    export interface IMyRouteParamsService extends ng.route.IRouteService {
-        id: any;
-    }
-
+module app.user {
     class EditController {
         item: Object;
         init: Function;
         updateItem: Function;
         toggleIdsCheckbox: Function;
+        userTypes: Object[];
+        homeAddresses: any[];
 
         static $inject = ["$routeParams", "$location", "apiService", "utilService"];
 
-        constructor($routeParams: IMyRouteParamsService,
+        constructor($routeParams: app.address.IMyRouteParamsService,
             $location: ng.ILocationService,
             apiService: app.apiService.IApiService,
             utilService: app.utilService.IUtilService) {
-
             var vm = this;
 
             vm.item = {};
             vm.updateItem = updateItem;
             vm.toggleIdsCheckbox = utilService.toggleIdsCheckbox;
+            vm.userTypes = utilService.userTypes;
 
             init();
 
-            function init(): void {
+            function init() {
+                apiService.getAddresses()
+                    .success(function (data: any): void {
+                        vm.homeAddresses = $.map(data, function (item: any) {
+                            return { name: item.streetAddress, value: item.id };
+                        });
+                    });
+
                 if (!$routeParams.id)
                     return;
 
-                apiService.getAddressById($routeParams.id)
+                apiService.getUserById($routeParams.id)
                     .success(function (data: any): void {
                         vm.item = data;
+
                     });
             }
 
             function updateItem(): void {
                 if ($routeParams.id) {
-                    apiService.updateAddress(vm.item)
+                    apiService.updateUser(vm.item)
                         .success(function (): void {
-                            $location.path("/addresses");
+                            $location.path("/users");
                         });
                 } else {
-                    apiService.addAddress(vm.item)
+                    apiService.addUser(vm.item)
                         .success(function (): void {
-                            $location.path("/addresses");
+                            $location.path("/users");
                         });
                 }
             }
@@ -53,6 +57,6 @@ module app.address {
     }
 
     angular
-        .module("app.address")
-        .controller("AddressEditController", EditController);
+        .module("app.user")
+        .controller("UserEditController", EditController);
 }

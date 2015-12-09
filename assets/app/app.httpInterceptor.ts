@@ -6,11 +6,10 @@ module app.httpInterceptor {
         error(response: any);
     }
 
-    class HttpInterceptor implements IHttpInterceptor{
-        public requestErrors = this.error;
-        public responseError = this.error;
+    class HttpInterceptor implements IHttpInterceptor {
 
-        constructor(private $q: ng.IQService, public $rootScope: IMyRootScope){}
+        constructor(private $q: ng.IQService, public $rootScope: IMyRootScope) {}
+
         parseErrors(modelState) {
             for (var key in modelState) {
                 for (var i = 0; i < modelState[key].length; i++) {
@@ -19,7 +18,7 @@ module app.httpInterceptor {
             }
         }
 
-        error(response) {
+        error(response: any) {
             if (!this.$rootScope.errorList) {
                 this.$rootScope.errorList = [];
             }
@@ -35,11 +34,11 @@ module app.httpInterceptor {
         }
     }
 
+    httpInterceptor.$inject = ['$q', '$rootScope'];
+
     function httpInterceptor($q, $rootScope): IHttpInterceptor {
         return new HttpInterceptor($q, $rootScope);
     }
-
-    httpInterceptor.$inject = ['$q', '$rootScope'];
 
     angular
         .module("app.httpInterceptor", [])

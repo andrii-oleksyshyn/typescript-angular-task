@@ -7,8 +7,6 @@ var app;
             function HttpInterceptor($q, $rootScope) {
                 this.$q = $q;
                 this.$rootScope = $rootScope;
-                this.requestErrors = this.error;
-                this.responseError = this.error;
             }
             HttpInterceptor.prototype.parseErrors = function (modelState) {
                 for (var key in modelState) {
@@ -31,10 +29,10 @@ var app;
             };
             return HttpInterceptor;
         })();
+        httpInterceptor.$inject = ['$q', '$rootScope'];
         function httpInterceptor($q, $rootScope) {
             return new HttpInterceptor($q, $rootScope);
         }
-        httpInterceptor.$inject = ['$q', '$rootScope'];
         angular
             .module("app.httpInterceptor", [])
             .factory("httpInterceptor", httpInterceptor);

@@ -4,7 +4,7 @@
     angular
         .module("field", [])
         .directive("field", field);
-    
+
     function field(): ng.IDirective {
         return {
             restrict: "E",

@@ -1,4 +1,4 @@
-module app.address {
+module app.order {
     "use strict";
 
     class ListController {
@@ -18,34 +18,34 @@ module app.address {
 
             var vm = this;
 
-            vm.createLink = "/addresses/edit";
+            vm.createLink = "/orders/edit";
             vm.deleteItem = deleteItem;
             vm.editItem = editItem;
 
             init();
 
             function init(): void {
-                apiService.getAddresses()
+                apiService.getOrders()
                     .success(function (data: any): void {
                         vm.tableParams = new NgTableParams({ count: 10 }, { data: data });
                     });
             }
 
-            function deleteItem(id: any): void {
-                apiService.deleteAddress(id)
+            function deleteItem(id): void {
+                apiService.deleteOrder(id)
                     .success(function (data: any): void {
                         $route.reload();
                     });
             }
 
             function editItem(id: any): void {
-                $location.path("/addresses/edit/" + id);
+                $location.path("/orders/edit/" + id);
             }
 
         }
     }
 
     angular
-        .module("app.address")
-        .controller("AddressListController", ListController);
+        .module("app.order")
+        .controller("OrderListController", ListController);
 }

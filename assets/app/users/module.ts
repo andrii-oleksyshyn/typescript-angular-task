@@ -1,6 +1,6 @@
-(function () {
+((): void => {
     "use strict";
-    angular.module("app.order", [
+    angular.module("app.user", [
         "ngTable",
         "app.apiService",
         "app.utilService"
